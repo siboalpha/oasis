@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="header donate-header">
+  <div class="container">
+    <h1 class="page-title h-white">Donate</h1>
+    <p>
+      A oasis of life, nous dependons de la generosite des autres pour faire
+      avancer la mission. votre soutien nous permet d'ecrire, de conseiller,
+      d'appuyer des actions en faveur des enfant, jeunes... la ou le besoin est
+      plus criant...
+    </p>
+  </div>
+</section>
+
+<section class="ways-to-give">
+  <div class="container">
+    <div class="col-left">
+      <h1 class="h-green">Ways to give</h1>
+      <div class="bank-transfer card">
+        <div class="number">
+          <p>1</p>
+        </div>
+        <div class="text">
+          <h3 class="h-green">Bank transfer</h3>
+          <p>
+            Have your gift transferred directly from your bank account or use
+            credit card, our most cost efficient option
+          </p>
+        </div>
+      </div>
+
+      <div class="mobile-money card">
+        <div class="number">
+          <p>2</p>
+        </div>
+        <div class="text">
+          <h3 class="h-green">Mobile money</h3>
+          <p>
+            make your donation by Mobil money, our locally most frequently used
+            giving option
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-right">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-input full">
+          <p>Ways to give:</p>
+
+          <div class="multiple-inputs">{{form.ways_to_give}}</div>
+        </div>
+
+        <div class="form-input full">
+          <p>Amount to give:</p>
+          <div class="multiple-inputs">{{form.amount_to_give}}</div>
+        </div>
+        <div class="form-input full">
+          {{form.other_amount_to_give}}
+        </div>
+        <div class="form-input half">
+          {{form.first_name}}
+          {{form.last_name}}
+          {{form.phone_number}}
+          {{form.country}}
+          {{form.email}}  
+        </div>
+        <div class="form-input full">
+          {{form.message}}
+        </div>
+        <div class="form-input half">
+          <input
+            class="form-control submit-btn submit-btn-green"
+            type="submit"
+            value="Send message"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

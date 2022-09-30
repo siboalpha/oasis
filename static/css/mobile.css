@@ -1,0 +1,202 @@
+@media screen and (max-width: 540px) {
+  .container {
+    padding: 50px 0;
+  }
+  section {
+    padding: 0 10px;
+  }
+  .heading {
+    font-size: 32px;
+  }
+  .hero {
+    height: 50vh;
+  }
+  .introduction .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .introduction .container .col-left {
+    width: 100%;
+  }
+  .introduction .container .col-right {
+    width: 100%;
+  }
+  .about-section .container {
+    flex-direction: column-reverse;
+    padding: 50px 0;
+  }
+  .about-section .container .col-left {
+    width: 90%;
+    position: relative;
+    padding: 40px;
+    margin-top: -150px;
+    z-index: 2;
+  }
+  .about-section .container .col-right {
+    width: 100%;
+    position: relative;
+  }
+  .about-section .container .col-right img {
+    width: 100%;
+  }
+  .activities .activities-cards {
+    flex-direction: column;
+  }
+  .counselling .container {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .counselling .container .col-left {
+    width: 100%;
+  }
+  .counselling .container .col-right {
+    width: 100%;
+  }
+  .resources .container {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+  .resources .container .col-left {
+    width: 100%;
+    padding: 0;
+  }
+  .resources .container .col-left .resources-cards {
+    row-gap: 10px;
+  }
+  .resources .container .col-left .resources-cards .card .recource-icon {
+    font-size: 32px;
+  }
+  .resources .container .col-left .resources-cards .card .resource-content .recource-text {
+    display: none;
+  }
+  .resources .container .col-right {
+    width: 100%;
+  }
+  .events .container {
+    padding-bottom: 130px;
+  }
+  .events .container .events-description {
+    width: 90%;
+  }
+  .events .container .events-cards {
+    grid-template-columns: 100%;
+  }
+  .call-to-action .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .call-to-action .container .col-left {
+    width: 100%;
+  }
+  .call-to-action .container .col-left p {
+    font-size: 20px;
+  }
+  .call-to-action .container .col-right {
+    width: 100%;
+  }
+  .contact .container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .contact .container .col-left {
+    width: 100%;
+  }
+  .contact .container .col-right {
+    width: 100%;
+  }
+  .contact .container .col-right form .form-input .submit-btn {
+    width: 50%;
+  }
+  .contact .container .col-right form .half {
+    grid-template-columns: 100%;
+  }
+  .footer {
+    padding: 20px;
+  }
+  .footer .container {
+    flex-direction: column;
+  }
+  .footer .container .col {
+    width: 50%;
+  }
+  .header {
+    height: 200px;
+    padding-left: 30px;
+  }
+  .header .container {
+    padding-top: 100px;
+  }
+  .vision-mission .container {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .vision-mission .container .col-left {
+    width: 100%;
+  }
+  .vision-mission .container .col-right {
+    width: 100%;
+    height: 250px;
+  }
+  .values .container {
+    padding: 50px 20px;
+  }
+  .values .container .values-cards {
+    grid-template-columns: 100%;
+  }
+  .values .container .values-cards .value-text {
+    padding: 15px;
+  }
+  .what-we-do .container .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .get-involved .container .get-involved-form {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .get-involved .container .get-involved-form .col-left {
+    width: 100%;
+  }
+  .get-involved .container .get-involved-form .col-right {
+    width: 100%;
+  }
+  .counsellin-page .container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .counsellin-page .container .col-left {
+    width: 100%;
+  }
+  .counsellin-page .container .col-right {
+    width: 100%;
+  }
+  .resources-section .container {
+    padding-bottom: 130px;
+  }
+  .resources-section .container .events-description {
+    width: 90%;
+  }
+  .resources-section .container .resources-cards {
+    grid-template-columns: 100%;
+  }
+  .donate-header {
+    height: 300px;
+  }
+  .ways-to-give .container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .ways-to-give .container .col-left, .ways-to-give .container .col-right {
+    width: 100%;
+  }
+  .ways-to-give .container .col-left .card {
+    width: 100%;
+  }
+  .ways-to-give .container .col-right {
+    margin-top: 0;
+    padding: 3;
+  }
+  .header .container p {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=mobile.css.map */

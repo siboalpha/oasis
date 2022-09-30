@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Oasis de vie | Welcome</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="" />
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/mobile.css' %}" />
+    
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <script
+          src="https://kit.fontawesome.com/54c10e37be.js"
+          crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      </head>
+<body>
+    <nav class="nav">
+        <div class="menu-icon">
+          <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo"><a href="/"><img src="{% static '/img/logo.png' %}" alt="" /></a></div>
+        <div class="nav-items">
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'counselling' %}">Counseling</a></li>
+          <li><a href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="{% url 'resources' %}">Resources</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'donate' %}"><button class="btn-white donate-button">Donate</button></a></li>
+        </div>
+        <div class="search-icon">
+          <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+          <span class="fas fa-times search-close-btn"></span>
+        </div>
+        <form action="#">
+          <input
+            type="search"
+            class="search-data"
+            placeholder="Search"
+            required
+          />
+          <button type="submit" class="fas fa-search"></button>
+        </form>
+      </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+          <div class="col resources">
+            <h5 class="footer-title">Resources</h5>
+            <hr>
+            <ul>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+            </ul>
+          </div>
+  
+          <div class="col resources">
+            <h5 class="footer-title">Counseling</h5>
+            <hr>
+            <ul>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+            </ul>
+          </div>
+  
+          <div class="col resources">
+            <h5 class="footer-title">Events</h5>
+            <hr>
+            <ul>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+              <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+            </ul>
+          </div>
+  
+          <div class="col books">
+            <h5 class="footer-title">Books</h5>
+            <hr>
+            <ul>
+              <li>
+                <img class="book-cover" src="{% static '/img/event-backgroud.jpg' %}" alt="">
+                <div class="book-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+              </li>
+  
+              <li>
+                <img class="book-cover" src="{% static '/img/event-backgroud.jpg' %}" alt="">
+                <div class="book-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <script src="{% static '/js/nav.js' %}"></script>
+      <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

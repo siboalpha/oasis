@@ -1,0 +1,294 @@
+@media screen and (max-width: 540px) {
+    .container {
+        padding: 50px 0;
+    }
+    section {
+        padding: 0 10px;
+    }
+    
+    .heading {
+        font-size: 32px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .introduction {
+        .container {
+            flex-direction: column;
+            gap: 20px;
+            .col-left {
+                width: 100%;
+            }
+            .col-right {
+                width: 100%;
+            }
+        }
+    }
+
+    .about-section {
+        .container {
+            flex-direction: column-reverse;
+            padding: 50px 0;
+            .col-left {
+                width: 90%;
+                position: relative;
+                padding: 40px;
+                margin-top: -150px;
+                z-index: 2;
+    
+            }
+    
+            .col-right {
+                width: 100%;
+                position: relative;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    .activities {
+        .activities-cards {
+            flex-direction: column;
+        }
+    }
+    
+    .counselling {
+        .container {
+            flex-direction: column-reverse;
+            gap: 20px;
+    
+            .col-left {
+                width: 100%;
+            }
+    
+            .col-right {
+                width: 100%;
+            }
+        }
+    }
+    
+    .resources {
+        .container {
+            flex-direction: column;
+            padding: 50px 0;
+    
+            .col-left {
+                width: 100%;
+                padding: 0;
+
+                .resources-cards {
+                    row-gap: 10px;
+                    .card {
+                        .recource-icon {
+                            font-size: 32px;
+                        }
+                        .resource-content {
+                            .recource-text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .col-right {
+                width: 100%;
+            }
+        }
+    }
+
+    .events {
+        .container {
+            padding-bottom: 130px;
+            .events-description {
+                width: 90%;
+            }
+
+            .events-cards {
+                grid-template-columns: 100%;
+            }
+        }
+    }
+
+    .call-to-action {
+        .container {
+            flex-direction: column;
+            gap: 20px;
+
+            .col-left {
+                width: 100%;
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            .col-right {
+                width: 100%;
+            }
+        }
+    }
+
+    .contact {
+        .container {
+            flex-direction: column;
+            gap: 50px;
+            .col-left {
+                width: 100%;
+            }
+            
+            .col-right {
+                width: 100%;
+
+                form {
+
+                    .form-input {
+                        .submit-btn {
+                            width: 50%;
+                        }
+                    }
+                    .half {
+                        grid-template-columns: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding: 20px;
+        .container {
+            flex-direction: column;
+    
+            .col {
+                width: 50%;
+            }
+        }
+    }
+
+    //About Page
+
+    .header {
+        height: 200px;
+        padding-left: 30px;
+        .container {
+            padding-top: 100px;
+        }
+    }
+
+    .vision-mission {
+        .container {
+            flex-direction: column-reverse;
+            gap: 0;
+
+            .col-left {
+                width: 100%;
+            }
+
+            .col-right {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    }
+
+    .values {
+        .container {
+            padding: 50px 20px;
+            .values-cards {
+                grid-template-columns: 100%;
+                .value-text {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+
+    .what-we-do {
+        .container {
+            .cards {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    }
+
+    .get-involved {
+        .container {
+            .get-involved-form {
+                flex-direction: column;
+                gap: 30px;
+
+                .col-left {
+                    width: 100%;
+                }
+                .col-right {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    //Counselling page
+
+    .counsellin-page {
+        .container {
+            flex-direction: column-reverse;
+            gap: 50px;
+            .col-left {
+                width: 100%;
+            }
+            .col-right {
+                width: 100%;
+            }
+        }
+    }
+
+    //Resources Page
+
+    .resources-section {
+        .container {
+            padding-bottom: 130px;
+            .events-description {
+                width: 90%;
+            }
+
+            .resources-cards {
+                grid-template-columns: 100%;
+            }
+        }
+    }
+
+    //Donate page
+    .donate-header {
+        height: 300px;
+    }
+    .ways-to-give {
+        .container {
+            flex-direction: column;
+            gap: 50px;
+            .col-left, .col-right {
+                width: 100%;
+            }
+            .col-left {
+                .card {
+                    width: 100%;
+                }
+            }
+            .col-right {
+                margin-top: 0;
+                padding: 3;
+            }
+        }
+    }
+
+    .header{
+        .container {
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+}

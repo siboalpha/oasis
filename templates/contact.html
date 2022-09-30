@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <section class="header">
+      <div class="container">
+        <h1 class="page-title h-white">Contact</h1>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="col-left">
+          <h2 class="h-green">Get in touch with us</h2>
+          <p>
+            In publishing and graphic design, Lorem ipsum is a placeholder text
+            commonly
+          </p>
+          <div class="contact-address">
+            <h4>Contact Address</h4>
+            <ul>
+              <li>
+                <a href="mailto:kjsexperiences@gmail.com"
+                  ><i class="fa fa-envelope-o"></i> example@email.com</a
+                >
+              </li>
+              <li>
+                <a href=""><i class="fa fa-phone icon"></i> 0788375418 </a> /
+                <a href="">0781218125</a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-whatsapp"></i> 0781218125</a>
+              </li>
+              <li>
+                <a href=""
+                  ><i class="fas fa-map-marker-alt"></i> KN 2AV,268 Street</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-right">
+          <form action="">
+            <div class="form-input half">
+              <input
+                class="form-control"
+                type="text"
+                placeholder=" First name"
+              />
+              <input
+                class="form-control"
+                type="text"
+                placeholder=" Last name"
+              />
+            </div>
+            <div class="form-input full">
+              <input class="form-control" type="text" placeholder="Email" />
+              <textarea
+                class="form-control"
+                rows="6"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <div class="form-input half">
+              <input
+                class="form-control submit-btn submit-btn-green"
+                type="submit"
+                value="Send message"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+ {% endblock %}
