@@ -39,3 +39,12 @@ class ContactMessageAdmin(admin.ModelAdmin):
 @admin.register(Donation)
 class DonationAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "email","ways_to_give", "amount_to_give", "other_amount_to_give", "date_created")
+
+@admin.register(NewsletterSubscription)
+class NewletterSubscriptionAdmin(admin.ModelAdmin):
+    list_display = ("name", "email")
+
+@admin.register(GetInvolvedLead)
+class GetInvolvedLeadAdmin(admin.ModelAdmin):
+    list_display = ("name", "email")
+

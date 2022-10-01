@@ -1,3 +1,4 @@
+from re import sub
 from readline import redisplay
 from django import http
 from django.shortcuts import redirect, render
@@ -6,13 +7,40 @@ from .forms import *
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    sub_form = NewsletterSubscriptionForm()
+    form = ContactMessageForm()
+    context = {'sub_form': sub_form, 'form':form}
+
+    if request.method == 'POST':
+        sub_form = NewsletterSubscriptionForm(request.POST)
+        form = ContactMessageForm(request.POST)
+        if sub_form.is_valid():
+            sub_form.save()
+            return redirect('contact')
+        if form.is_valid():
+            form.save()
+            return redirect('contact')
+    return render(request, 'index.html', context)
 
 def contact(request):
-    return render(request, 'contact.html')
+    form = ContactMessageForm()
+    context = {'form':form}
+    if request.method == 'POST': 
+        form = ContactMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'contact.html', context)
 
 def about(request):
-     return render(request, 'about-us.html')
+    form = GetInvolvedLeadForm()
+    context = {'form':form}
+    if request.method =='POST':
+        form = GetInvolvedLeadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'about-us.html', context)
 
 def counselling(request):
     form = AppointmentForm()

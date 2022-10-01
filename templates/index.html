@@ -256,10 +256,11 @@
       </p>
     </div>
     <div class="col-right">
-      <form action="">
+      <form action="" method="POST">
+        {% csrf_token %}
         <div class="form-input full">
-          <input class="form-control" type="text" placeholder=" First name" />
-          <input class="form-control" type="text" placeholder=" Last name" />
+          {{sub_form.name}}
+          {{sub_form.email}}
         </div>
         <div class="form-input half">
           <input
@@ -305,25 +306,24 @@
       </div>
     </div>
     <div class="col-right">
-      <form action="">
+      <form action="" method="POST">
+        {% csrf_token %}
         <div class="form-input half">
-          <input class="form-control" type="text" placeholder=" First name" />
-          <input class="form-control" type="text" placeholder=" Last name" />
+          {{form.full_name}}
+          {{form.phone_number}}
         </div>
         <div class="form-input full">
-          <input class="form-control" type="text" placeholder="Email" />
-          <textarea
-            class="form-control"
-            rows="6"
-            placeholder="Message"
-          ></textarea>
+          {{form.email}}
+          {{form.message}}
         </div>
         <div class="form-input half">
-          <input
+          <a href="">
+            <input
             class="form-control submit-btn submit-btn-green"
             type="submit"
             value="Send message"
           />
+          </a>
         </div>
       </form>
     </div>

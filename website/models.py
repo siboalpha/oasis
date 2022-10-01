@@ -3,6 +3,7 @@ from email import message
 from email.policy import default
 from random import choices
 from turtle import title
+from unicodedata import name
 from django.forms import ChoiceField
 from django.utils import timezone
 from django.db import models
@@ -100,3 +101,12 @@ class Donation(models.Model):
     email = models.EmailField(max_length=255)
     date_created = models.DateTimeField(default=timezone.now)
     message = models.CharField(max_length=255)
+
+
+class NewsletterSubscription(models.Model):
+    name = models.CharField(max_length = 255)
+    email = models.EmailField(max_length = 255)
+
+class GetInvolvedLead(models.Model):
+    name = models.CharField(max_length = 255)
+    email = models.EmailField(max_length = 255)

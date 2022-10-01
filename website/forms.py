@@ -44,3 +44,35 @@ class AppointmentForm(ModelForm):
             'email':EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email Address'}),           
             'notes':Textarea(attrs={'class': 'form-control', 'placeholder': 'Any notes that would help us in our session?'}),           
         }
+
+
+class NewsletterSubscriptionForm(ModelForm):
+    class Meta:
+        model = NewsletterSubscription
+        fields = ['name', 'email']
+        widgets = {
+            'name':TextInput(attrs={'class': 'form-control', 'placeholder': 'Your full name'}),
+            'email':EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your email address'}),
+        }
+
+class GetInvolvedLeadForm(ModelForm):
+    class Meta:
+        model = GetInvolvedLead
+        fields = ['name', 'email']
+        widgets = {
+            'name':TextInput(attrs={'class': 'form-control', 'placeholder': 'Your full name'}),
+            'email':EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your email address'}),
+        }
+
+
+
+class ContactMessageForm(ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['full_name', 'phone_number', 'email', 'message']
+        widgets = {
+            'full_name':TextInput(attrs={'class': 'form-control', 'placeholder': 'Your full name'}),
+            'phone_number':TextInput(attrs={'class': 'form-control', 'placeholder': 'Your phone number'}),            
+            'email':EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email Address'}),           
+            'message':Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message'}),           
+        }

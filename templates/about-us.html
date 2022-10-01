@@ -127,16 +127,17 @@
         </h1>
       </div>
       <div class="col-right">
-        <form action="">
+        <form action="" method="POST">
+          {% csrf_token %}
           <div class="form-input full">
-            <input class="form-control" type="text" placeholder=" Full name " />
-            <input class="form-control" type="email" placeholder=" email" />
+            {{form.name}}
+            {{form.email}}
           </div>
           <div class="form-input half">
             <input
-              class="form-control submit-btn submit-btn-green"
+              class="form-control submit-btn submit-btn-white"
               type="submit"
-              value="Submit"
+              value="Subscribe"
             />
           </div>
         </form>
