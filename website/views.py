@@ -1,5 +1,4 @@
-from re import sub
-from readline import redisplay
+import imp
 from django import http
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -9,7 +8,11 @@ from .forms import *
 def index(request):
     sub_form = NewsletterSubscriptionForm()
     form = ContactMessageForm()
-    context = {'sub_form': sub_form, 'form':form}
+
+    projects = Project.objects.order_by("-date_created")[:4]
+    events = Event.objects.order_by("-date_created")[:4]
+
+    context = {'sub_form': sub_form, 'form':form, 'projects':projects, 'events':events}
 
     if request.method == 'POST':
         sub_form = NewsletterSubscriptionForm(request.POST)
@@ -53,13 +56,19 @@ def counselling(request):
     return render(request, 'counseling.html', context)
 
 def resources(request):
-    return render(request, 'resources.html')
+    podcasts = Podcast.objects.order_by("-date_created")[:4]
+    context = {'podcasts':podcasts}
+    return render(request, 'resources.html', context)
 
 def events(request):
-    return render(request, 'events.html')
+    events = Event.objects.all()
+    context = {'events':events}
+    return render(request, 'events.html', context)
 
 def projects (request):
-    return render(request, 'projects.html')
+    projects = Project.objects.all()
+    context = {'projects':projects}
+    return render(request, 'projects.html', context)
 
 
 def donate(request):
@@ -74,3 +83,18 @@ def donate(request):
     
     context = {'form':form}
     return render(request, 'donate.html', context)
+
+def search(request):
+    from django.db.models import Q
+
+    query = request.GET.get('q','')
+    if query:
+        queryset = (Q(title__icontains=query) | Q(details__icontains=query))
+        podcasts = Podcast.objects.filter(queryset).distinct()
+        music = RelaxingMusic.objects.filter(queryset).distinct()
+        events = Event.objects.filter(queryset).distinct()
+        projects = Project.objects.filter(queryset).distinct()
+        context = {'podcasts':podcasts, 'music':music, 'events':events, 'projects':projects, 'query':query}
+        return render (request, 'search.html', context)
+    else:
+        return render (request, 'search.html')

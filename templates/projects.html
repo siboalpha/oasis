@@ -5,45 +5,20 @@
       </div>
     </section>
 
-    <section class="resources-section">
+    <section class="projects-section section-white">
       <div class="container">
 
-        <div class="resources-cards">
+        <div class="projects-cards">
+          {% for project in projects %}
           <div class="card">
-            <img src="/img/event-backgroud.jpg" alt="" />
+            <img src="{{project.featured_image.url}}" alt="" />
             <div class="resource-content">
-              <h4 class="title">Project title</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+              <h4 class="title">{{project.title}}</h4>
+              <p>{{project.details|slice:120}}...</p>
               <a href="">Read more</a>
             </div>
           </div>
-
-          <div class="card">
-            <img src="/img/event-backgroud.jpg" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Project title</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="/img/event-backgroud.jpg" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Project title</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="/img/event-backgroud.jpg" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Project title</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>

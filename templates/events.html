@@ -1,63 +1,35 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-    <section class="header">
-      <div class="container">
-        <h1 class="page-title h-white">Events</h1>
-      </div>
-    </section>
+<section class="header">
+  <div class="container">
+    <h1 class="page-title h-white">Events</h1>
+  </div>
+</section>
 
-    <section class="events-page">
-      <div class="container">
-        <h2 class="h-green">Events</h2>
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
+<section class="events-page">
+  <div class="container">
+    <h2 class="h-green">Events</h2>
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
 
-        <div class="events-cards">
-          <div class="card">
-            <img src="{% static '{% static ' %}'/img/event-backgroud.jpg' %}" alt="" />
-            <div class="event-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-              <p class="location"><span>Location</span> DRC, Congo</p>
-              <a href=""><button>Learn more</button></a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '{% static ' %}'/img/event-backgroud.jpg' %}" alt="" />
-            <div class="event-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-              <p class="location"><span>Location</span> DRC, Congo</p>
-              <a href=""><button>Learn more</button></a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '{% static ' %}'/img/event-backgroud.jpg' %}" alt="" />
-            <div class="event-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-              <p class="location"><span>Location</span> DRC, Congo</p>
-              <a href=""><button>Learn more</button></a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '{% static ' %}'/img/event-backgroud.jpg' %}" alt="" />
-            <div class="event-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-              <p class="location"><span>Location</span> DRC, Congo</p>
-              <a href=""><button>Learn more</button></a>
-            </div>
-          </div>
+    <div class="events-cards">
+      {% for event in events %}
+      <div class="card">
+        <img src="{{event.featured_image.url}}" alt="" />
+        <div class="event-content">
+          <h4 class="title">{{event.title}}</h4>
+          <p class="date"><span>Date</span> {{event.date}}</p>
+          <p class="location"><span>Location</span> {{event.location}}</p>
+          <a href=""><button>Learn more</button></a>
         </div>
       </div>
-    </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-    {% endblock %}
+{% endblock %}

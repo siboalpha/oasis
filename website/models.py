@@ -22,6 +22,7 @@ class Appointment(models.Model):
 class Podcast(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=255)
+    details = models.TextField(max_length=500, null=True)
     author = models.CharField(max_length=255)
     podcat_file = models.FileField(upload_to = 'podcasts')
     featured_image = models.ImageField(upload_to = 'podcasts/featured_images', null = True)
@@ -29,6 +30,7 @@ class Podcast(models.Model):
 class RelaxingMusic(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=255)
+    details = models.TextField(max_length=500, null=True)
     author = models.CharField(max_length=255)
     featured_image = models.ImageField(upload_to = 'relaxing_music/featured_images')
     music_file = models.FileField(upload_to = 'relaxing_music/music_files')
@@ -38,18 +40,20 @@ class Event(models.Model):
     featured_image = models.ImageField(upload_to = 'events/featured_images')
     details = models.TextField(max_length=500, null = True)
     date = models.DateField(auto_now_add=False)
+    location = models.CharField(max_length=255, null=True)
     date_created = models.DateTimeField(default=timezone.now)
 
 class Project(models.Model):
     title = models.CharField(max_length=255)
-    desciprion = models.TextField(max_length=255)
+    details = models.TextField(max_length=255)
     featured_image = models.ImageField(upload_to = 'projects/featured_images')
+    date_created = models.DateTimeField(default=timezone.now)
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length = 255, null = True)
     cover = models.ImageField(upload_to = 'books/covers', null = True)
-    summary = models.TextField(max_length=500)
+    details = models.TextField(max_length=500)
     book_file = models.FileField(upload_to = 'books/book_file')
     date_created = models.DateTimeField(default=timezone.now)
 

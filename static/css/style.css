@@ -185,36 +185,53 @@ form .half {
   border-radius: 10px;
 }
 
-.activities {
+.projects-section {
   text-align: center;
   background: #044C3C;
   color: white;
 }
-.activities .activities-cards {
+.projects-section .projects-cards {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
 }
-.activities .activities-cards .card {
+.projects-section .projects-cards .card {
   background-color: rgba(5, 103, 82, 0.7725490196);
-  padding: 30px;
   border-radius: 10px;
   text-align: start;
+  padding-bottom: 20px;
 }
-.activities .activities-cards .card p {
-  margin-bottom: 10px;
+.projects-section .projects-cards .card img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.activities .activities-cards .card a {
+.projects-section .projects-cards .card p {
+  margin: 10px 20px;
+}
+.projects-section .projects-cards .card a {
   color: #B8CCC6;
   text-decoration: underline;
+  margin: 20px;
 }
-.activities .activities-cards .card a:hover {
+.projects-section .projects-cards .card a:hover {
   color: white;
 }
-.activities .activities-cards .card .title {
-  margin-bottom: 20px;
+.projects-section .projects-cards .card .title {
+  margin: 20px;
+}
+
+.section-white {
+  background-color: white;
+  color: rgb(99, 99, 99);
+}
+.section-white .container .projects-cards .card {
+  background-color: whitesmoke;
+}
+.section-white .container .projects-cards .card .resource-content a {
+  color: #044C3C;
 }
 
 .counselling .container {
@@ -273,6 +290,12 @@ form .half {
 .resources .container .col-left .resources-cards .card .recource-icon {
   font-size: 50px;
 }
+.resources .container .col-left .resources-cards .card img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .resources .container .col-right {
   width: 50%;
   background: url("/static/img/eagle.jpg");
@@ -302,6 +325,9 @@ form .half {
 }
 .events .container .events-cards .card img {
   border-radius: 10px 10px 0 0;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .events .container .events-cards .card .event-content {
   padding: 30px;
@@ -554,6 +580,9 @@ form .half {
   background-color: #B8CCC6;
 }
 
+.resources-section {
+  background-color: white;
+}
 .resources-section .container {
   display: flex;
   flex-direction: column;
@@ -567,11 +596,18 @@ form .half {
   grid-template-columns: 24% 24% 24% 24%;
   gap: 1.3%;
 }
+.resources-section .container .resources-cards .card {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
 .resources-section .container .resources-cards .card img {
   border-radius: 10px 10px 0 0;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .resources-section .container .resources-cards .card .resource-content {
-  padding-top: 20px;
+  padding: 20px;
   text-align: start;
   color: #044C3C;
   display: flex;
@@ -615,6 +651,9 @@ form .half {
 }
 .events-page .container .events-cards .card img {
   border-radius: 10px 10px 0 0;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .events-page .container .events-cards .card .event-content {
   padding: 30px;
@@ -679,4 +718,23 @@ form .half {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+}
+
+.search-results .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.search-results .container a {
+  color: rgb(99, 99, 99);
+}
+.search-results .container a .result {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.search-results .container a .result .title {
+  font-weight: 900px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }/*# sourceMappingURL=style.css.map */

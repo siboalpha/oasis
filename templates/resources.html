@@ -1,358 +1,337 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-    <section class="header">
-      <div class="container">
-        <h1 class="page-title h-white">Resources</h1>
-      </div>
-    </section>
+<section class="header">
+  <div class="container">
+    <h1 class="page-title h-white">Resources</h1>
+  </div>
+</section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Podcasts</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Podcasts</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
 
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="date"><span>Date</span> 12/03/2022</p>
-            </div>
-          </div>
+    <div class="resources-cards">
+      {% for podcast in podcasts %}
+      <div class="card">
+        <img src="{{podcast.featured_image.url}}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">{{podcast.title}}</h4>
+          <p class="date"><span>Date</span> {{podcast.date_created|date:"M d, Y"}}</p>
         </div>
       </div>
-    </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Podcasts</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Podcasts</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
 
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="artist"><span>Artist: </span> Artist Name</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="artist"><span>Artist: </span> Artist Name</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="artist"><span>Artist: </span> Artist Name</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="artist"><span>Artist: </span> Artist Name</p>
-            </div>
-          </div>
+    <div class="resources-cards">
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="artist"><span>Artist: </span> Artist Name</p>
         </div>
       </div>
-    </section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Spiritual Life</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
-
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="artist"><span>Artist: </span> Artist Name</p>
         </div>
       </div>
-    </section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Everyday Life</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
-
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="artist"><span>Artist: </span> Artist Name</p>
         </div>
       </div>
-    </section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Familiy</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
-
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="artist"><span>Artist: </span> Artist Name</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Youth</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Spiritual Life</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
 
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+    <div class="resources-cards">
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
         </div>
       </div>
-    </section>
 
-    <section class="resources-section">
-      <div class="container">
-        <h2 class="h-green">Book</h2>
-        <hr />
-        <p class="events-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-          asperiores aperiam possimus qui quia molestias veniam ratione corporis
-          tempore amet provident veritatis velit minus sed alias obcaecati
-          impedit error.
-        </p>
-
-        <div class="resources-cards">
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-            <div class="resource-content">
-              <h4 class="title">Event title for some insights</h4>
-              <p class="Date"><span>Date: </span> 20/02/2022</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
         </div>
       </div>
-    </section>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Everyday Life</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
+
+    <div class="resources-cards">
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Familiy</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
+
+    <div class="resources-cards">
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Youth</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
+
+    <div class="resources-cards">
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Book</h2>
+    <hr />
+    <p class="events-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
+      asperiores aperiam possimus qui quia molestias veniam ratione corporis
+      tempore amet provident veritatis velit minus sed alias obcaecati
+      impedit error.
+    </p>
+
+    <div class="resources-cards">
+      {% for podcast in podcasts %}
+      <div class="card">
+        <img src="{{podcatd.featured_image.url}}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">Event title for some insights</h4>
+          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
