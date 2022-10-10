@@ -11,13 +11,11 @@
     <h2 class="h-green">Podcasts</h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      Parfois, nous avons tous du mal à comprendre comment la vie et les écritures se rejoignent. Nos podcasts diversifiés vous permettent d’explorer des perspectives pour les complexités de notre époque actuelle et vous insufflent un souffle nouveau.
     </p>
 
     <div class="resources-cards">
+      {% if podcasts %}
       {% for podcast in podcasts %}
       <div class="card">
         <img src="{{podcast.featured_image.url}}" alt="" />
@@ -27,274 +25,162 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<section class="resources-section">
+  <div class="container">
+    <h2 class="h-green">Prières et musiques vivifiantes </h2>
+    <hr />
+    <p class="events-description">
+      C’est dans le calme et le repos que sera votre force. Par des prières et musiques encourageantes et vivifiantes nous vous stimulons à développer une relation de confiance et de paix avec Dieu et vous-même. 
+    </p>
+
+    <div class="resources-cards">
+      {% if music %}
+      {% for song in music %}
+      <div class="card">
+        <img src="{{song.featured_image.url}}" alt="" />
+        <div class="resource-content">
+          <h4 class="title">{{song.title}}</h4>
+          <p class="date"><span>Date</span> {{song.date_created|date:"M d, Y"}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 <section class="resources-section">
   <div class="container">
-    <h2 class="h-green">Podcasts</h2>
+    <h2 class="h-green">Vie spirituelle </h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      Notre maturité en Christ est un chemin obligé pour jouir du bien-être holistique. Ce blog vous aide à découvrir tout ce que vous avez reçu gratuitement à la croix et à vous affermir dans la foi.
     </p>
 
     <div class="resources-cards">
+      {% if blogsVie_spirituelle %}
+      {% for blog in blogsVie_spirituelle %}
       <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <img src="{{blog.featured_image.url}}" alt="" />
         <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="artist"><span>Artist: </span> Artist Name</p>
+          <h4 class="title">{{blog.title}}</h4>
+          <p>
+            {{blog.summary|slice:120}}..
+          </p>
+          <a href="">Read more</a>
         </div>
       </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="artist"><span>Artist: </span> Artist Name</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="artist"><span>Artist: </span> Artist Name</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="artist"><span>Artist: </span> Artist Name</p>
-        </div>
-      </div>
+      {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 <section class="resources-section">
   <div class="container">
-    <h2 class="h-green">Spiritual Life</h2>
+    <h2 class="h-green">Vie quotidienne </h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      Souvent, nous avons tous du mal à relever les défis quotidiens et cela nous expose à l’anxiété, la dépression, le stress etc. Ce blog nous permet d’explorer un nouveau regard sur nos luttes quotidiennes et nous rend victorieux face à la dépression, le stress, l’anxiété. 
     </p>
 
     <div class="resources-cards">
+      {% if blogsVie_quotidienne %}
+      {% for blog in blogsVie_quotidienne %}
       <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <img src="{{blog.featured_image.url}}" alt="" />
         <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <h4 class="title">{{blog.title}}</h4>
+          <p>
+            {{blog.summary|slice:120}}..
+          </p>
           <a href="">Read more</a>
         </div>
       </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
+      {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 <section class="resources-section">
   <div class="container">
-    <h2 class="h-green">Everyday Life</h2>
+    <h2 class="h-green">Bonheur Familiale </h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      La famille devrait être un foyer de croissance et d’épanouissement. Hélas, souvent nos familles sont hostiles à notre bien-être et croissance. Grace à ce blog vous pouvez développer un nouveau regard sur Dieu, vous-même et les autres et ainsi apprendre à vivre épanouie dans votre vie relationnelle.
     </p>
 
     <div class="resources-cards">
+      {% if blogsBonheur_Familiale %}
+      {% for blog in blogsBonheur_Familiale %}
       <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <img src="{{blog.featured_image.url}}" alt="" />
         <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <h4 class="title">{{blog.title}}</h4>
+          <p>
+            {{blog.summary|slice:120}}..
+          </p>
           <a href="">Read more</a>
         </div>
       </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
+      {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 <section class="resources-section">
   <div class="container">
-    <h2 class="h-green">Familiy</h2>
+    <h2 class="h-green">Jeunesse </h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      La vitesse avec laquelle les gens vivent et les modes font que les jeunes et les enfants se confrontent à un problème d’épanouissement et d’identité. Ce blog donne une perspective pour vivre une jeunesse passionnante et significative. 
     </p>
-
     <div class="resources-cards">
+      {% if blogsJeunesse %}
+      {% for blog in blogsJeunesse %}
       <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
+        <img src="{{blog.featured_image.url}}" alt="" />
         <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
+          <h4 class="title">{{blog.title}}</h4>
+          <p>
+            {{blog.summary|slice:120}}..
+          </p>
           <a href="">Read more</a>
         </div>
       </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
+      {% endfor %}
+      {% else %}
+      <p>Rien n'a été trouvé</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 <section class="resources-section">
   <div class="container">
-    <h2 class="h-green">Youth</h2>
+    <h2 class="h-green">Livres </h2>
     <hr />
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
+      Découvrez un trésor de livres et mini-livres basés sur une étude minutieuse de la parole de Dieu écrits par nos auteurs. Vous pouvez le recevoir directement en nous appelant ou en nous ecrivant
     </p>
 
     <div class="resources-cards">
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
-        <div class="resource-content">
-          <h4 class="title">Event title for some insights</h4>
-          <p class="Date"><span>Date: </span> 20/02/2022</p>
-          <a href="">Read more</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="resources-section">
-  <div class="container">
-    <h2 class="h-green">Book</h2>
-    <hr />
-    <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati
-      impedit error.
-    </p>
-
-    <div class="resources-cards">
-      {% for podcast in podcasts %}
       <div class="card">
         <img src="{{podcatd.featured_image.url}}" alt="" />
         <div class="resource-content">
@@ -303,7 +189,6 @@
           <a href="">Read more</a>
         </div>
       </div>
-      {% endfor %}
       <div class="card">
         <img src="{% static '/img/event-backgroud.jpg' %}" alt="" />
         <div class="resource-content">

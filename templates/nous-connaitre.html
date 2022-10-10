@@ -1,0 +1,117 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="header">
+  <div class="container">
+    <h1 class="page-title h-white">Nous connaître</h1>
+  </div>
+</section>
+
+<section class="about-org">
+  <div class="container">
+    <h1 class="h-green">À propos de l'organisation</h1>
+    <p class="about-org-text">
+      Puisque les vérités scripturaires façonnent la manière dont nous voyons et vivons la vie, nous partageons la sagesse de Dieu avec d'autres personnes par le biais de notre ministère. 
+      <br><br>
+      Nous travaillons pour offrir une aide holistique, pertinente et centrée sur Dieu aux personnes qui luttent et souffrent spirituellement, psychologiquement et socialement. Nous travaillons avec les individus et des groupes d’individus comme l’église local en rendant accessible un ministère de Counseling Biblique, une diversité de ressources et conférences pratiques pour équiper, inspirer et vivifier pour une vie abondante au niveau individuel, familiale et communautaire. 
+      <br><br>
+      Au travers du ministère de miséricorde et de justice sociale ces hommes et ces femmes restaurés et transformés existent comme une communauté oasis de vie dans le désert et ils agissent là où le besoin est le plus criant en venant en aide à ceux qui en ont besoin.
+
+    </p>
+  </div>
+</section>
+
+<section class="vision-mission">
+  <div class="container">
+    <div class="col-left">
+      <div>
+        <h2 class="mission h-green">Notre mission</h2>
+        <hr />
+        <p class="mission-text">
+          Centrer sur Christ et son enseignement nous marchons aux cotés des personnes qui souffrent et luttent, abordant avec eux les problèmes qui tuent notre bien-être, comment ces problèmes sont vécus, comment Dieu marche avec nous dans un monde de joies et de peines, comment il travaille en nous et au travers de nous pour transformer ces problèmes avec sagesse et amour.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="vision h-green">Notre Vision </h2>
+        <hr />
+        <p class="vision-text">
+          Nous voulons voir une société transformée par des personnes restaurées.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-right"></div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <h1 class="h-green">Nos valeurs </h1>
+    <div class="values-cards">
+      <p class="value-text">La présence </p>
+      <p class="value-text">L’écoute</p>
+      <p class="value-text">La compassion</p>
+      <p class="value-text">L’engagement</p>
+      <p class="value-text">La prière</p>
+    </div>
+  </div>
+</section>
+
+<section class="what-we-do">
+  <div class="container">
+    <h1 class="h-white">Ce que nous faisons </h1>
+    <div class="cards">
+      <div class="card">
+        <p>
+          Counseling biblique, nous marchons aux côtés de ceux qui luttent et souffrent.
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          Éducation spirituelle et psychosociale ainsi que la capacitation, au travers de nos ressources et conférences
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          Ministère de miséricorde et de justice social auprès de personnes en besoin
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="get-involved">
+  <div class="container">
+    <h1 class="h-green">Pour agir </h1>
+    <p>
+      Nous dépendons de Dieu avec gratitude et de différentes manières il nous appelle à dépendre du soutien des autres. 
+      <br><br>
+      Quand vous lisez un blog, écoutez un audio ou regardez une vidéo, suivez une formation ou assistez à une conférence, nous prions pour que vous grandissiez, dans la sagesse et l'amour bibliques. Si vous avez le sentiment d'avoir été béni, si le ministère d’Oasis de vie a transformé la façon dont vous faites l'expérience de Jésus dans un monde de joies et de peines vous pouvez agir avec nous en priant, en partageant avec les autres et en donnant financièrement.
+    </p>
+
+    <div class="get-involved-form">
+      <div class="col-left">
+        <h1 class="h-green">
+          Lorsque vous Priez pour nous, Partagez notre ministère avec d'autres et Donnez financièrement, vous renforcez l'impact de notre ministère dans le monde entier. Et mieux encore, vous communiquez l’espoir trouvé en Jésus-Christ à plusieurs.
+        </h1>
+      </div>
+      <div class="col-right">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="form-input full">
+            {{form.name}}
+            {{form.email}}
+          </div>
+          <div class="form-input half">
+            <input
+              class="form-control submit-btn submit-btn-white"
+              type="submit"
+              value="Pour agir "
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="{% static '/js/nav.js' %}"></script>
+{% endblock %}

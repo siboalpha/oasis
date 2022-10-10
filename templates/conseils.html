@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+  <section class="header">
+    <div class="container">
+      <h1 class="page-title h-white">Conseils Biblique </h1>
+    </div>
+  </section>
+
+  <section class="counsellin-page">
+    <div class="container">
+      <div class="col-left">
+        <h1 class="h-green">Conseils Biblique </h1>
+        <hr />
+        <p>
+          Si Dieu nous a donné tout ce dont nous avons besoin pour la vie et la piété (2 Pierre 1 :3), il est certain que sa Parole a quelque chose de significatif et de vivifiant à dire quand nous souffrons et luttons. Le counseling biblique est une prise en charge significative et vivifiante auprès des âmes blessées et troublées. Pratiquer par nos counselors, ils soutiennent et accompagnent les personnes qui luttent et souffrent. 
+        </p>
+      </div>
+
+      <div class="col-right"></div>
+    </div>
+  </section>
+
+  <section class="contact bg-light-green" id="book">
+    <div class="container">
+      <div class="col-left">
+        <h2 class="h-green">Demandez un rendez-vou</h2>
+        <p>
+          Pour en apprendre plus sur les modalités de prise en charge. Nous ferons de notre mieux pour vous satisfaire ; si nous ne le pouvons pas, nous vous proposerons des options de conseil extérieures.
+        </p>
+      </div>
+      <div class="col-right">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="form-input half">
+            {{form.first_name}}
+            {{form.last_name}}
+            {{form.phone_number}}
+            {{form.email}}
+            <div>
+              <p>When will you be available?</p>
+              {{form.date}}
+            </div>
+          </div>
+          <div class="form-input full">
+            {{form.notes}}
+          <div class="form-input half">
+            <input class="form-control submit-btn submit-btn-green" type="submit" value="Envoyer le message" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+ {% endblock %}

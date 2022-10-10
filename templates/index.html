@@ -6,21 +6,17 @@
   <div class="container">
     <div class="col-left">
       <h1 class="heading h-green">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Des individus transformés renouvellent la vie autour d'eux grâce à des actions transformatrices.
       </h1>
     </div>
 
     <div class="col-right">
       <p class="introduction-text">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+        Oasis de vie travaille pour la restauration des vies dans une approche holistique pour qu’en retour ceux-ci soient des oasis de vie dans leur environnement immédiat. Nous croyons que Dieu veut que nous ayons une vie abondante et épanouie afin que nous et notre environnement en soyons bénéficiaires.
       </p>
 
       <a href="{% url 'contact' %}">
-        <button class="green-button btn-green">Book a session</button>
+        <button class="green-button btn-green">Réserver une séance</button>
       </a>
     </div>
   </div>
@@ -29,14 +25,11 @@
 <section class="about-section">
   <div class="container">
     <div class="col-left">
-      <h2 class="h-white">About Us</h2>
+      <h2 class="h-white">A propos de nous </h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora ut
-        omnis magni tempore aspernatur enim maiores quis reiciendis aliquid
-        ipsum molestiae officia tenetur earum optio, facere dicta eos nostrum
-        fugit!
+        Nous nous appelons oasis de vie parce que nous avons à cœur de soutenir et d’aider ceux qui traversent non seulement des temps de déserts et de larmes dans leur vie mais aussi de plénitude (spirituelle, psychologique, relationnelle, social…) à en faire des oasis de vie à la lumière de la parole de Dieu.
       </p>
-      <a href="{% url 'about' %}"
+      <a href="{% url 'nous-connaitre' %}"
         ><button class="btn-white">Learn more</button></a
       >
     </div>
@@ -49,7 +42,7 @@
 
 <section class="projects-section">
   <div class="container">
-    <h2 class="h-white">Our Projects</h2>
+    <h2 class="h-white">Nos Programme </h2>
     <div class="projects-cards">
       {% for project in projects %}
           <div class="card">
@@ -68,17 +61,12 @@
 <section class="counselling">
   <div class="container">
     <div class="col-left">
-      <h2 class="h-green">Counseling</h2>
+      <h2 class="h-green">Conseils</h2>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged.
+        Si Dieu nous a donné tout ce dont nous avons besoin pour la vie et la piété (2 Pierre 1 :3), il est certain que sa Parole a quelque chose de significatif et de vivifiant à dire quand nous souffrons et luttons. Le counseling biblique est une prise en charge significative et vivifiante auprès des âmes blessées et troublées. Pratiquer par nos counselors, ils soutiennent et accompagnent les personnes qui luttent et souffrent. 
       </p>
-      <a href="{% url 'counselling' %}">
-        <button class="btn-green">Book a session</button>
+      <a href="{% url 'conseils' %}#book">
+        <button class="btn-green">Réserver une séance</button>
       </a>
     </div>
 
@@ -98,7 +86,7 @@
           <div class="resource-content">
             <h4 class="resource-title">Podcasts</h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Développez une perspective biblique aux complexités actuelles
             </p>
           </div>
         </div>
@@ -106,9 +94,9 @@
         <div class="card">
           <div class="recource-icon"><i class="fas fa-cloud-moon"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Spiritual Life</h4>
+            <h4 class="resource-title">Vie spirituelle </h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Grandissez en confiance dans votre identité 
             </p>
           </div>
         </div>
@@ -116,9 +104,9 @@
         <div class="card">
           <div class="recource-icon"><i class="fas fa-cloud-sun"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Everyday Life</h4>
+            <h4 class="resource-title">Vie courante </h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Abordez votre quotidien dans la paix et la sérénité
             </p>
           </div>
         </div>
@@ -126,9 +114,9 @@
         <div class="card">
           <div class="recource-icon"><i class="fa fa-group"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Family</h4>
+            <h4 class="resource-title">Bonheur Familiale</h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Développez de relations constructives et épanouissantes
             </p>
           </div>
         </div>
@@ -136,9 +124,9 @@
         <div class="card">
           <div class="recource-icon"><i class="far fa-smile-wink"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Youth</h4>
+            <h4 class="resource-title">Jeunesse </h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              vivez une jeunesse passionnante et significative
             </p>
           </div>
         </div>
@@ -146,9 +134,9 @@
         <div class="card">
           <div class="recource-icon"><i class="fas fa-music"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Relaxing music</h4>
+            <h4 class="resource-title">Prières et musiques vivifiantes </h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Dans le silence et le repos soyez vivifiés
             </p>
           </div>
         </div>
@@ -156,15 +144,15 @@
         <div class="card">
           <div class="recource-icon"><i class="fas fa-book-medical"></i></div>
           <div class="resource-content">
-            <h4 class="resource-title">Books</h4>
+            <h4 class="resource-title">Livres </h4>
             <p class="recource-text">
-              Listen to our entire library of podcast for free
+              Découvrez un trésor de sagesse et vérités fondamentales de la vie
             </p>
           </div>
         </div>
       </div>
       <a href="{% url 'resources' %}">
-        <button class="btn-white">Resources</button>
+        <button class="btn-white">abonnez-vous à notre liste de diffusion</button>
       </a>
     </div>
 
@@ -174,12 +162,9 @@
 
 <section class="events">
   <div class="container">
-    <h2 class="h-green">Events</h2>
+    <h2 class="h-green">Evenements </h2>
     <p class="events-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ullam
-      asperiores aperiam possimus qui quia molestias veniam ratione corporis
-      tempore amet provident veritatis velit minus sed alias obcaecati impedit
-      error.
+      Nos évènements sont occasions unique où les gens bénéficient d’un enseignement solide sur des sujets importants en matière du bien-être et de vie abondante.
     </p>
 
     <div class="events-cards">
@@ -203,8 +188,7 @@
   <div class="container">
     <div class="col-left">
       <p>
-        Subscribe to our newsletter Lorem Ipsum is simply dummy text of the
-        printing and typesetting industry.
+        Désirez-vous en savoir plus sur Oasis de vie ? Inscrivez-vous ici pour recevoir les lettres du ministère.
       </p>
     </div>
     <div class="col-right">
@@ -218,7 +202,7 @@
           <input
             class="form-control submit-btn submit-btn-white"
             type="submit"
-            value="Subscribe"
+            value="S'abonner"
           />
         </div>
       </form>
@@ -229,29 +213,28 @@
 <section class="contact">
   <div class="container">
     <div class="col-left">
-      <h2 class="h-green">Get in touch with us</h2>
+      <h2 class="h-green">Prenez contact avec nous</h2>
       <p>
-        In publishing and graphic design, Lorem ipsum is a placeholder text
-        commonly
+        Nous nous ferons un Plaisir de vous écouter
       </p>
       <div class="contact-address">
-        <h4>Contact Address</h4>
+        <h4>Adresse de contact</h4>
         <ul>
           <li>
-            <a href="mailto:kjsexperiences@gmail.com"
-              ><i class="fa fa-envelope-o"></i> example@email.com</a
+            <a href="mailto:oasisoflife21@gmail.com"
+              ><i class="fa fa-envelope-o"></i>oasisoflife21@gmail.com</a
             >
           </li>
           <li>
-            <a href=""><i class="fa fa-phone icon"></i> 0788375418 </a> /
-            <a href="">0781218125</a>
+            <a href="TEL:+ 243 970 658 398"><i class="fa fa-phone icon"></i> +243 970 658 398 </a>
           </li>
+  
           <li>
-            <a href=""><i class="fab fa-whatsapp"></i> 0781218125</a>
+            <a href="https://wa.me/243850742228"><i class="fab fa-whatsapp"></i> +243 850 742 228</a>
           </li>
           <li>
             <a href=""
-              ><i class="fas fa-map-marker-alt"></i> KN 2AV,268 Street</a
+              ><i class="fas fa-map-marker-alt"></i>22, Av. du lac Q. Kyeshero/ Goma, DRC</a
             >
           </li>
         </ul>
@@ -273,7 +256,7 @@
             <input
             class="form-control submit-btn submit-btn-green"
             type="submit"
-            value="Send message"
+            value="Envoyer le message"
           />
           </a>
         </div>

@@ -1,12 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <section class="header donate-header">
   <div class="container">
-    <h1 class="page-title h-white">Donate</h1>
+    <h1 class="page-title h-white">Faire un don</h1>
     <p>
-      A oasis of life, nous dependons de la generosite des autres pour faire
-      avancer la mission. votre soutien nous permet d'ecrire, de conseiller,
-      d'appuyer des actions en faveur des enfant, jeunes... la ou le besoin est
-      plus criant...
+      A oasis of life, nous dépendons de la générosité des autres pour faire avancer la mission. Votre soutien nous permet d'écrire, de conseiller, d’organiser nos conférences et ateliers et d'appuyer des actions en faveur des personnes dans les besoins là où le besoin est le plus criant. Merci pour votre générosité !
     </p>
   </div>
 </section>
@@ -14,16 +11,15 @@
 <section class="ways-to-give">
   <div class="container">
     <div class="col-left">
-      <h1 class="h-green">Ways to give</h1>
+      <h1 class="h-green">Comment donner</h1>
       <div class="bank-transfer card">
         <div class="number">
           <p>1</p>
         </div>
         <div class="text">
-          <h3 class="h-green">Bank transfer</h3>
+          <h3 class="h-green">Transfert bancaire </h3>
           <p>
-            Have your gift transferred directly from your bank account or use
-            credit card, our most cost efficient option
+            Faites transférer votre don directement de votre compte bancaire ou utilisez votre cheque, notre option la plus économique.
           </p>
         </div>
       </div>
@@ -33,10 +29,9 @@
           <p>2</p>
         </div>
         <div class="text">
-          <h3 class="h-green">Mobile money</h3>
+          <h3 class="h-green">Argent mobile</h3>
           <p>
-            make your donation by Mobil money, our locally most frequently used
-            giving option
+            Faites votre don par Mobil money, notre option de don la plus utilisée localement.
           </p>
         </div>
       </div>
@@ -46,13 +41,13 @@
       <form action="" method="POST">
         {% csrf_token %}
         <div class="form-input full">
-          <p>Ways to give:</p>
+          <p>Comment donner:</p>
 
           <div class="multiple-inputs">{{form.ways_to_give}}</div>
         </div>
 
         <div class="form-input full">
-          <p>Amount to give:</p>
+          <p>Montant à donner:</p>
           <div class="multiple-inputs">{{form.amount_to_give}}</div>
         </div>
         <div class="form-input full">
@@ -72,7 +67,7 @@
           <input
             class="form-control submit-btn submit-btn-green"
             type="submit"
-            value="Send message"
+            value="Faire un don"
           />
         </div>
       </form>

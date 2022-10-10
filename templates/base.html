@@ -26,12 +26,12 @@
     </div>
     <div class="logo"><a href="/"><img src="{% static '/img/logo.png' %}" alt="" /></a></div>
     <div class="nav-items">
-      <li><a href="{% url 'about' %}">About Us</a></li>
-      <li><a href="{% url 'counselling' %}">Counseling</a></li>
-      <li><a href="{% url 'projects' %}">Projects</a></li>
+      <li><a href="{% url 'nous-connaitre' %}">Nous Connaître</a></li>
+      <li><a href="{% url 'conseils' %}">Conseils</a></li>
+      <li><a href="{% url 'projets' %}">Projets</a></li>
       <li><a href="{% url 'resources' %}">Resources</a></li>
       <li><a href="{% url 'contact' %}">Contact</a></li>
-      <li><a href="{% url 'donate' %}"><button class="btn-white donate-button">Donate</button></a></li>
+      <li><a href="{% url 'faire-un-don' %}"><button class="btn-white donate-button">Faire un don</button></a></li>
     </div>
     <div class="search-icon">
       <span class="fas fa-search"></span>
@@ -40,7 +40,7 @@
       <span class="fas fa-times search-close-btn"></span>
     </div>
     <form action="{% url 'search' %}" method="GET">
-      <input type="search" class="search-data" placeholder="Search" required name="q" value="{{ query|escape }}" />
+      <input type="search" class="search-data" placeholder="Chercher" required name="q" value="{{ query|escape }}" />
       <button type="submit" class="fas fa-search"></button>
     </form>
   </nav>
@@ -55,35 +55,32 @@
         <h5 class="footer-title">Resources</h5>
         <hr>
         <ul>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Postcasts récemment ajoutés</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Prières et musiques vivifiantes</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Articles de vie spirituelle</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Articles de vie quotidienne </a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Bonheur Familiale</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Articles liés à la jeunesse</a></li>
+          <li><a href=""><i class="fas fa-dot-circle"></i> Livres gratuit</a></li>
+          
         </ul>
       </div>
 
       <div class="col resources">
         <h5 class="footer-title">Counseling</h5>
         <hr>
-        <ul>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-        </ul>
+        <p>
+          Nous ferons de notre mieux pour vous satisfaire ; si nous ne le pouvons pas, nous vous proposerons des options de conseil extérieures. 
+        </p>
       </div>
 
       <div class="col resources">
         <h5 class="footer-title">Events</h5>
         <hr>
         <ul>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
-          <li><a href=""><i class="fas fa-dot-circle"></i> Footer link to a page</a></li>
+          {% for event in footer_events %}
+          <li><a href=""><i class="fas fa-dot-circle"></i> {{event.title}}</a></li>
+          {% endfor %} 
         </ul>
       </div>
 
@@ -91,15 +88,12 @@
         <h5 class="footer-title">Books</h5>
         <hr>
         <ul>
+          {% for book in  footer_books %}
           <li>
-            <img class="book-cover" src="{% static '/img/event-backgroud.jpg' %}" alt="">
-            <div class="book-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+            <img class="book-cover" src="{{book.cover.url}}" alt="">
+            <div class="book-title">{{book.details|slice:100}}</div>
           </li>
-
-          <li>
-            <img class="book-cover" src="{% static '/img/event-backgroud.jpg' %}" alt="">
-            <div class="book-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>

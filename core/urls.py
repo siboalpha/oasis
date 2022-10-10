@@ -25,7 +25,7 @@ admin.site.index_title = "Welcome to Oasis de vie Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls'))
+    path('', include('website.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

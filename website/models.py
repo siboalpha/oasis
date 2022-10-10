@@ -1,12 +1,9 @@
-from distutils.command.upload import upload
-from email import message
 from email.policy import default
 from random import choices
-from turtle import title
-from unicodedata import name
-from django.forms import ChoiceField
+from unicodedata import category
 from django.utils import timezone
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -67,10 +64,10 @@ class ContactMessage(models.Model):
 
 
 class Donation(models.Model):
-    Mobiel_Money = 'Mobile money'
-    Bank_transfer = 'Bank transfer'
-    Cheque = 'Cheque'
-    Cash = 'Cash'
+    Mobiel_Money = 'Argent mobile'
+    Bank_transfer = 'Transfert bancaire'
+    Cheque = 'Chèque'
+    Cash = 'En espèces'
 
 
     ten = '$10'
@@ -78,7 +75,7 @@ class Donation(models.Model):
     fifty = '$50'
     hundred = '$100'
     two_hundred = '$200'
-    other = 'other'
+    other = 'Autre'
 
     AMOUNT_TO_GIVE_CHOICES = [
         (ten , '$10'),
@@ -86,14 +83,14 @@ class Donation(models.Model):
         (fifty , '$50'),
         (hundred , '$100'),
         (two_hundred , '$200'),
-        (other, 'other')
+        (other, 'Autre')
     ]
 
     WAYS_TO_GIVE_CHOICES = [
-        (Mobiel_Money, 'Mobile money'),
-        (Bank_transfer, 'Bank Transfer'),
-        (Cheque, 'Cheque'),
-        (Cash, 'Cash'),
+        (Mobiel_Money, 'Argent mobile'),
+        (Bank_transfer, 'Transfert bancaire'),
+        (Cheque, 'Chèque'),
+        (Cash, 'En espèces'),
     ]
     ways_to_give = models.CharField(max_length = 255, choices=WAYS_TO_GIVE_CHOICES, default=Mobiel_Money)
     amount_to_give = models.CharField(max_length = 255, choices=AMOUNT_TO_GIVE_CHOICES, default=two_hundred)
@@ -114,3 +111,25 @@ class NewsletterSubscription(models.Model):
 class GetInvolvedLead(models.Model):
     name = models.CharField(max_length = 255)
     email = models.EmailField(max_length = 255)
+
+class Blog(models.Model):
+    Vie_spirituelle = 'Vie spirituelle'
+    Vie_quotidienne = 'Vie quotidienne'
+    Bonheur_Familiale = 'Bonheur Familiale'
+    Jeunesse  = 'Jeunesse'
+
+    BLOG_CATEGORIES = {
+        (Vie_spirituelle , 'Vie spirituelle'),
+        (Vie_quotidienne, 'Vie quotidienne'),
+        (Bonheur_Familiale, 'Bonheur Familiale'),
+        (Jeunesse, 'Jeunesse')
+
+    }
+
+    title = models.CharField(max_length = 255)
+    category = models.CharField(max_length = 255, choices = BLOG_CATEGORIES, default = Jeunesse)
+    date_created = models.DateTimeField(default=timezone.now, null = True)
+    autho = models.CharField(max_length = 255, null=True)
+    featured_image = models.ImageField(upload_to = "blog/fratured_image")
+    summary = models.TextField(max_length = 255, null = True)
+    content = RichTextField(max_length = 5000)

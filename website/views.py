@@ -3,6 +3,7 @@ from django import http
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import *
+from library.models import Image
 # Create your views here.
 
 def index(request):
@@ -12,7 +13,9 @@ def index(request):
     projects = Project.objects.order_by("-date_created")[:4]
     events = Event.objects.order_by("-date_created")[:4]
 
-    context = {'sub_form': sub_form, 'form':form, 'projects':projects, 'events':events}
+    footer_events = Event.objects.order_by("date_created")[:4]
+    footer_books = Book.objects.order_by("-date_created")[:2]
+    context = {'sub_form': sub_form, 'form':form, 'projects':projects, 'events':events, 'footer_events':footer_events, 'footer_books':footer_books}
 
     if request.method == 'POST':
         sub_form = NewsletterSubscriptionForm(request.POST)
@@ -27,7 +30,10 @@ def index(request):
 
 def contact(request):
     form = ContactMessageForm()
-    context = {'form':form}
+
+    footer_events = Event.objects.order_by("date_created")[:4]
+    
+    context = {'form':form, 'footer_events':footer_events}
     if request.method == 'POST': 
         form = ContactMessageForm(request.POST)
         if form.is_valid():
@@ -37,42 +43,58 @@ def contact(request):
 
 def about(request):
     form = GetInvolvedLeadForm()
-    context = {'form':form}
+    footer_events = Event.objects.order_by("date_created")[:4]
+    context = {'form':form, 'footer_events':footer_events}
     if request.method =='POST':
         form = GetInvolvedLeadForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home')
-    return render(request, 'about-us.html', context)
+    return render(request, 'nous-connaitre.html', context)
 
-def counselling(request):
+def conseils(request):
     form = AppointmentForm()
-    context = {'form': form}
+    footer_events = Event.objects.order_by("date_created")[:4]
+
+    context = {'form': form, 'footer_events':footer_events}
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home')
-    return render(request, 'counseling.html', context)
+    return render(request, 'conseils.html', context)
 
 def resources(request):
     podcasts = Podcast.objects.order_by("-date_created")[:4]
-    context = {'podcasts':podcasts}
+    footer_events = Event.objects.order_by("date_created")[:4]
+
+    music = RelaxingMusic.objects.order_by("-date_created")[:4]
+    blogsJeunesse = Blog.objects.order_by("-date_created").filter(category = 'Jeunesse')[:4]
+    blogsBonheur_Familiale = Blog.objects.order_by("-date_created").filter(category = 'Bonheur Familiale')[:4]
+    print(blogsBonheur_Familiale.count)
+    blogsVie_quotidienne = Blog.objects.order_by("-date_created").filter(category = 'Vie quotidienne')[:4]
+    blogsVie_spirituelle = Blog.objects.order_by("-date_created").filter(category = 'Vie spirituelle')[:4]
+    context = {'podcasts':podcasts, 'music':music, 'blogsJeunesse':blogsJeunesse, 'blogsBonheur_Familiale':blogsBonheur_Familiale,
+    'blogsVie_quotidienne':blogsVie_quotidienne, 'blogsVie_spirituelle':blogsVie_spirituelle, 'footer_events':footer_events}
     return render(request, 'resources.html', context)
 
 def events(request):
     events = Event.objects.all()
-    context = {'events':events}
+    footer_events = Event.objects.order_by("date_created")[:4]
+    context = {'events':events, 'footer_events':footer_events}
     return render(request, 'events.html', context)
 
-def projects (request):
+def projets (request):
     projects = Project.objects.all()
-    context = {'projects':projects}
-    return render(request, 'projects.html', context)
+    footer_events = Event.objects.order_by("date_created")[:4]
+
+    context = {'projects':projects, 'footer_events':footer_events}
+    return render(request, 'projets.html', context)
 
 
-def donate(request):
+def faireUnDon(request):
     form = DonationForm()
+    footer_events = Event.objects.order_by("date_created")[:4]
     if request.method == 'POST':
         form = DonationForm(request.POST)
         if form.is_valid():
@@ -81,12 +103,12 @@ def donate(request):
         else:
             return HttpResponse('Data is not valid')
     
-    context = {'form':form}
-    return render(request, 'donate.html', context)
+    context = {'form':form, 'footer_events':footer_events}
+    return render(request, 'faire-un-don.html', context)
 
 def search(request):
     from django.db.models import Q
-
+    footer_events = Event.objects.order_by("date_created")[:4]
     query = request.GET.get('q','')
     if query:
         queryset = (Q(title__icontains=query) | Q(details__icontains=query))
@@ -94,7 +116,7 @@ def search(request):
         music = RelaxingMusic.objects.filter(queryset).distinct()
         events = Event.objects.filter(queryset).distinct()
         projects = Project.objects.filter(queryset).distinct()
-        context = {'podcasts':podcasts, 'music':music, 'events':events, 'projects':projects, 'query':query}
+        context = {'podcasts':podcasts, 'music':music, 'events':events, 'projects':projects, 'query':query ,'footer_events':footer_events}
         return render (request, 'search.html', context)
     else:
         return render (request, 'search.html')

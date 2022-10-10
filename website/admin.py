@@ -48,3 +48,6 @@ class NewletterSubscriptionAdmin(admin.ModelAdmin):
 class GetInvolvedLeadAdmin(admin.ModelAdmin):
     list_display = ("name", "email")
 
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+     list_display = ("title", "date_created")
