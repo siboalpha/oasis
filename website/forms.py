@@ -1,5 +1,3 @@
-from dataclasses import field, fields
-from statistics import mode
 from django import forms
 from django.forms import ModelForm, TextInput, Textarea, RadioSelect, EmailInput
 from .models import *
