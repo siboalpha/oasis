@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <section class="header singe-page-header">
     <div class="container singe-page-container">
-      <h1 class="page-title h-white">Single Page</h1>
+      <h1 class="page-title h-white">{{blog.title}}</h1>
+      <img src="{{blog.featured_image.url}}" alt="">
     </div>
   </section>
 
   <section class="single-page-hero">
     <div class="container singe-page-container">
-
     </div>
   </section>
 
