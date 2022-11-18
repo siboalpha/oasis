@@ -14,8 +14,8 @@ import imp
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-#load_dotenv()
-load_dotenv("/home/admin/oasis/core/.env")
+load_dotenv()
+#load_dotenv("/home/admin/oasis/core/.env")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('MY_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['oasisdevie.org', 'www.oasisdevie.org', '127.0.0.1']
 # Application definition

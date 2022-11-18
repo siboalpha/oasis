@@ -389,6 +389,10 @@ form {
                             }
                         }
                     }
+                    a {
+                        color: $primary-color;
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -860,5 +864,43 @@ form {
                 }
             }
         }
+    }
+}
+
+.singe-page-container {
+    max-width: 1000px;
+}
+
+.singe-page-header {
+    height: 400px;
+}
+
+.single-page-hero {
+    margin-top: -200px;
+    .singe-page-container {
+        height: 500px;
+        background: url("/img/eagle.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+}
+
+.meta {
+    margin: 30px 0;
+    .singe-page-container {
+        background-color: $off-white;
+        padding: 30px;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+    }
+}
+
+.single-page-content {
+    .singe-page-container {
+        background-color: $off-white;
     }
 }

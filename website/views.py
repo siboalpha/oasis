@@ -120,3 +120,25 @@ def search(request):
         return render (request, 'search.html', context)
     else:
         return render (request, 'search.html')
+
+
+def blog(request, slug):
+    blog = Blog.objects.get(slug = slug)
+    context = {'blog':blog}
+    return render(request, 'blog.html', context)
+
+
+def projet(request, slug):
+    blog = Project.objects.get(slug = slug)
+    context = {'blog':blog}
+    return render(request, 'projet.html', context)
+
+def event(request, slug):
+    event = Event.objects.get(slug = slug)
+    context = {'event':event}
+    return render(request, 'event.html', context)
+
+def podcast(request, slug):
+    podcast = Podcast.objects.get(slug = slug)
+    context = {'podcast':podcast}
+    return render(request, 'podcast.html', context)

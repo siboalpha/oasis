@@ -22,6 +22,7 @@
         <div class="resource-content">
           <h4 class="title">{{podcast.title}}</h4>
           <p class="date"><span>Date</span> {{podcast.date_created|date:"M d, Y"}}</p>
+          <a href="{{podcast.get_absolute_url}}">Listen</a>
         </div>
       </div>
       {% endfor %}
@@ -75,7 +76,7 @@
           <p>
             {{blog.summary|slice:120}}..
           </p>
-          <a href="">Read more</a>
+          <a href="{{blog.get_absolute_url}}">Read more</a>
         </div>
       </div>
       {% endfor %}
@@ -104,7 +105,7 @@
           <p>
             {{blog.summary|slice:120}}..
           </p>
-          <a href="">Read more</a>
+          <a href="{{blog.get_absolute_url}}">Read more</a>
         </div>
       </div>
       {% endfor %}
@@ -133,7 +134,7 @@
           <p>
             {{blog.summary|slice:120}}..
           </p>
-          <a href="">Read more</a>
+          <a href="{{blog.get_absolute_url}}">Read more</a>
         </div>
       </div>
       {% endfor %}
@@ -161,7 +162,7 @@
           <p>
             {{blog.summary|slice:120}}..
           </p>
-          <a href="">Read more</a>
+          <a href="{{blog.get_absolute_url}}">Read more</a>
         </div>
       </div>
       {% endfor %}

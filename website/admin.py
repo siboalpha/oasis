@@ -11,25 +11,29 @@ class AppointmentAdmin(admin.ModelAdmin):
 @admin.register(Podcast)
 class PodcastAdmin(admin.ModelAdmin):
     list_display = ("title", "author")
+    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(RelaxingMusic)
 class RelaxingMusicAdmin(admin.ModelAdmin):
     list_display = ("title", "author")
-
+    prepopulated_fields = {"slug": ("title",)}
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     list_display = ("title", "date")
+    prepopulated_fields = {"slug": ("title",)}
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ("title", "featured_image")
+    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ("title", "author", "date_created")
+    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(ContactMessage)
@@ -51,3 +55,4 @@ class GetInvolvedLeadAdmin(admin.ModelAdmin):
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
      list_display = ("title", "date_created")
+     prepopulated_fields = {"slug": ("title",)}

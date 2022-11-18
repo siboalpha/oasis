@@ -44,13 +44,13 @@
   <div class="container">
     <h2 class="h-white">Nos Programme </h2>
     <div class="projects-cards">
-      {% for project in projects %}
+      {% for projet in projects %}
           <div class="card">
-            <img src="{{project.featured_image.url}}" alt="" />
+            <img src="{{projet.featured_image.url}}" alt="" />
             <div class="resource-content">
-              <h4 class="title">{{project.title}}</h4>
-              <p>{{project.details|slice:120}}...</p>
-              <a href="">Read more</a>
+              <h4 class="title">{{projet.title}}</h4>
+              <p>{{projet.details|slice:120}}...</p>
+              <a href="{{projet.get_absolute_url}}">Read more</a>
             </div>
           </div>
       {% endfor %} 
@@ -175,6 +175,7 @@
           <h4 class="title">{{event.title}}</h4>
           <p class="date"><span>Date: </span> {{event.date}}</p>
           <p class="location"><span>Location</span> {{event.location}}</p>
+          <a href="{{event.get_absolute_url}}">Read more</a>
         </div>
       </div>
 

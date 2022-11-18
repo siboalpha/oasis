@@ -344,6 +344,10 @@ form .half {
 .events .container .events-cards .card .event-content p span::after {
   content: ":";
 }
+.events .container .events-cards .card .event-content a {
+  color: #044C3C;
+  text-decoration: underline;
+}
 
 .call-to-action {
   background-color: #044C3C;
@@ -738,4 +742,37 @@ form .half {
   font-weight: 900px;
   margin-bottom: 10px;
   text-transform: capitalize;
+}
+
+.singe-page-container {
+  max-width: 1000px;
+}
+
+.singe-page-header {
+  height: 400px;
+}
+
+.single-page-hero {
+  margin-top: -200px;
+}
+.single-page-hero .singe-page-container {
+  height: 500px;
+  background: url("/img/eagle.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.meta {
+  margin: 30px 0;
+}
+.meta .singe-page-container {
+  background-color: whitesmoke;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.single-page-content .singe-page-container {
+  background-color: whitesmoke;
 }/*# sourceMappingURL=style.css.map */

@@ -11,5 +11,10 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('projets/', views.projets, name='projets'),
     path('faire-un-don/', views.faireUnDon, name='faire-un-don'),
-    path('search/', views.search, name='search')
+    path('search/', views.search, name='search'),
+
+    path('blog/<slug:slug>/', views.blog, name='blog'),
+    path('projet/<slug:slug>/', views.projet, name='projet'),
+    path('event/<slug:slug>/', views.event, name='event'),
+    path('podcast/<slug:slug>/', views.podcast, name='podcast'),
 ]
